@@ -10,7 +10,7 @@ function Install-Posh-Gvm() {
     try {
         # create temp dir
         $tempDir = [guid]::NewGuid().ToString()
-        $tempDir = "$env:TEMP\$tempDir"
+        $tempDir = join-path "$env:TEMP" "$tempDir"
         New-Item -ItemType Directory $tempDir | Out-Null
 
         # download current version
